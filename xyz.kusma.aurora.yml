@@ -61,7 +61,6 @@ modules:
   config-opts:
   - "-DASSIMP_BUILD_ASSIMP_TOOLS=0"
   - "-DASSIMP_BUILD_TESTS=0"
-  - "-DINJECT_DEBUG_POSTFIX=0"
   sources:
   - type: git
     url: https://github.com/assimp/assimp.git
