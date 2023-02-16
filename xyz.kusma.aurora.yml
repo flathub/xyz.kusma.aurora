@@ -64,7 +64,7 @@ modules:
   sources:
   - type: git
     url: https://github.com/assimp/assimp.git
-    tag: v5.2.1
+    tag: v5.2.5
 - name: bass
   buildsystem: simple
   sources:
