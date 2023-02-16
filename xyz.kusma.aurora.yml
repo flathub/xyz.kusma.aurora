@@ -1,6 +1,6 @@
 app-id: xyz.kusma.aurora
 runtime: org.freedesktop.Platform
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: aurora.sh
 finish-args:
@@ -14,7 +14,7 @@ modules:
   sources:
   - type: git
     url: https://github.com/KhronosGroup/glslang.git
-    tag: 7.10.2984
+    tag: 12.0.0
 - name: extra-cmake-modules
   buildsystem: cmake-ninja
   cleanup:
@@ -61,17 +61,18 @@ modules:
   config-opts:
   - "-DASSIMP_BUILD_ASSIMP_TOOLS=0"
   - "-DASSIMP_BUILD_TESTS=0"
-  - "-DINJECT_DEBUG_POSTFIX=0"
   sources:
   - type: git
     url: https://github.com/assimp/assimp.git
-    tag: v5.2.1
+    tag: v5.2.5
 - name: bass
   buildsystem: simple
   sources:
   - type: archive
     strip-components: 0
     url: https://web.archive.org/web/20220415095301/http://www.un4seen.com/files/bass24-linux.zip
+    mirror-urls:
+    - https://gitlab.com/kusma/bass-version-mirror/-/raw/main/bass-2.4.16-linux.zip
     sha256: 77f387762a9ee4b72da3c6581c22e50456ab7aeb7c9a7154564530a9468db655
   build-commands:
   - install -m 644 bass.h /app/include
