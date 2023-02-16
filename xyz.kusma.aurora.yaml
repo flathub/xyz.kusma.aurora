@@ -4,7 +4,7 @@ runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: aurora.sh
 finish-args:
-- "--socket=x11"
+- "--socket=wayland"
 - "--device=dri"
 - "--socket=pulseaudio"
 - "--share=ipc"
@@ -15,16 +15,25 @@ modules:
   - type: git
     url: https://github.com/KhronosGroup/glslang.git
     tag: 7.10.2984
+- name: extra-cmake-modules
+  buildsystem: cmake-ninja
+  cleanup:
+  - '*'
+  sources:
+  - type: git
+    url: https://github.com/KDE/extra-cmake-modules.git
+    tag: v5.103.0
 - name: glfw
   buildsystem: cmake-ninja
   config-opts:
   - "-DBUILD_SHARED_LIBS=1"
   - "-DGLFW_BUILD_TESTS=0"
   - "-DGLFW_BUILD_DOCS=0"
+  - "-DGLFW_USE_WAYLAND=1"
   sources:
   - type: git
     url: https://github.com/glfw/glfw.git
-    tag: 3.3.6
+    tag: 3.3.8
 - name: glm
   buildsystem: cmake-ninja
   config-opts:
@@ -74,7 +83,7 @@ modules:
   sources:
   - type: git
     url: https://github.com/kusma/even-laster-engine.git
-    commit: cbcdfb1980911024b2c64c3b26dca7af7d94c2bc
+    commit: 90e00933a4d5af01b0c2e9a29350e7fab3f0465b
 - name: aurora
   buildsystem: simple
   sources:
