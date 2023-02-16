@@ -4,7 +4,7 @@ runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 command: aurora.sh
 finish-args:
-- "--socket=x11"
+- "--socket=wayland"
 - "--device=dri"
 - "--socket=pulseaudio"
 - "--share=ipc"
@@ -29,6 +29,7 @@ modules:
   - "-DBUILD_SHARED_LIBS=1"
   - "-DGLFW_BUILD_TESTS=0"
   - "-DGLFW_BUILD_DOCS=0"
+  - "-DGLFW_USE_WAYLAND=1"
   sources:
   - type: git
     url: https://github.com/glfw/glfw.git
