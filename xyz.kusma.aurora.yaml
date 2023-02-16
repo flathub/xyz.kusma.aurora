@@ -24,7 +24,7 @@ modules:
   sources:
   - type: git
     url: https://github.com/glfw/glfw.git
-    tag: 3.3.6
+    tag: 3.3.8
 - name: glm
   buildsystem: cmake-ninja
   config-opts:
