@@ -1,6 +1,6 @@
 app-id: xyz.kusma.aurora
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: aurora.sh
 finish-args:
@@ -84,7 +84,7 @@ modules:
   sources:
   - type: git
     url: https://github.com/kusma/even-laster-engine.git
-    commit: 90e00933a4d5af01b0c2e9a29350e7fab3f0465b
+    commit: e8682df47d559ede29c03fd2ed664e75b1ceaf5a
 - name: aurora
   buildsystem: simple
   sources:
